@@ -1,0 +1,50 @@
+.wrapper.wrapper-content.animated.fadeInRight
+  .row
+    .ibox.float-e-margins
+      .ibox-title
+        %h5 Closing Process
+        .ibox-tools
+          %a.collapse-link
+            %i.fa.fa-chevron-up
+      .ibox-content.no-padding
+        %ul.list-group
+          %li.list-group-item
+            %p
+              %strong Close Documents
+            %p
+              Pay Fees
+              %ul
+                %li Loan Origination Fee
+                %li Title Search Fee
+                %li Attorney Fee (if applicable)
+                %li Title Insurance
+                %li Recording Fee
+                %li Inspection Fee
+                %li Appraisal Fee
+                %li Survey Fee
+                %li Pest Inspection Fee
+                %li Underwriting Fee
+
+
+            %p
+              Complete Transaction
+            %p
+              Get Keys
+            %p
+              Title Insurance
+            %p
+              Homeowners Insurance
+            %p
+              Requirements
+              %ul
+                %li Photo id, loan estimate, closing disclosure, mortgage note, copies, payment schedule, cashiers checks
+
+      .ibox-footer.text-center
+        -# We should do dynamic pagination along with active page highlighting
+        .btn-group
+          = link_to topic_7_finance_pages_path, class: "btn btn-success finance-footer-button" do
+            %i.fa.fa-chevron-left
+            Previous
+          = link_to "#", class: "btn btn-success disbaled finance-footer-button" do
+            Next
+            %i.fa.fa-chevron-right

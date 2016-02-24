@@ -1,0 +1,145 @@
+.wrapper.wrapper-content.animated.fadeInRight
+  .row
+    .col-sm-6.col-sm-offset-3
+      -#validates errors div
+      = render "layouts/validation_errors", :model => @showing_tracking
+  .row
+    .col-lg-7
+      .ibox.float-e-margins
+        .ibox-title
+          %h3
+            Track a New Showing
+        .ibox-content
+          .row
+            .col-sm-10
+
+              -# %h3.m-t-none.m-b Create a Contact
+              -# %p Sign in today for more expirience.
+              = form_for [@contact, @showing_tracking] do |f|
+                .form-group
+                  = f.label :showing_street_address__c, "Street Address"
+                  = f.text_field :showing_street_address__c, class: "form-control"
+                .form-group
+                  = f.label :showing_city__c, "City"
+                  = f.text_field :showing_city__c, class: "form-control"
+                  .form-group
+                  = f.label :showing_price__c, "Price"
+                  = f.number_field :showing_price__c, class: "form-control"
+                  .form-group
+                  = f.label :showing_square_footage__c, "Square Footage"
+                  = f.number_field :showing_square_footage__c, class: "form-control"
+                  .form-group
+                  = f.label :showing_of_bedrooms__c, "Num of Bedrooms"
+                  = f.number_field :showing_of_bedrooms__c, class: "form-control"
+                  .form-group
+                  = f.label :showing_of_bathrooms__c, "Num of Bathrooms"
+                  = f.number_field :showing_of_bathrooms__c, class: "form-control"
+                .form-group
+                  = f.label :showing_general_condition__c, "General Condition"
+                  = f.hidden_field :showing_general_condition__c, id: "general_condition"
+                .form-group
+                  = f.label :showing_neighborhood__c, "Neighborhood"
+                  = f.hidden_field :showing_neighborhood__c, id: "neighborhood"
+                .form-group
+                  = f.label :showing_commute__c, "Commute"
+                  = f.hidden_field :showing_commute__c, id: "commute"
+                .form-group
+                  = f.label :showing_exterior__c, "Exterior"
+                  = f.hidden_field :showing_exterior__c, id: "exterior"
+                .form-group
+                  = f.label :showing_kitchen__c, "Kitchen"
+                  = f.hidden_field :showing_kitchen__c, id: "kitchen"
+                .form-group
+                  = f.label :showing_design_personality__c, "Design Personality"
+                  = f.hidden_field :showing_design_personality__c, id: "design"
+                .form-group
+                  = f.label :showing_home_layout__c, "Home Layout"
+                  = f.hidden_field :showing_home_layout__c, id: "layout"
+                .form-group
+                  = f.label :showing_land_scaping__c, "Landscaping"
+                  = f.hidden_field :showing_land_scaping__c, id: "landscaping"
+                .form-group
+                  = f.label :showing_local_schools__c, "Local Schools"
+                  = f.hidden_field :showing_local_schools__c, id: "schools"
+                .form-group
+                  = f.label :showing_master_bedroom__c, "Master Bedroom"
+                  = f.hidden_field :showing_master_bedroom__c, id: "master"
+                .form-group
+                  = f.label :showing_notes__c, "Notes"
+                  = f.text_area :showing_notes__c, class: "form-control"
+                .form-group
+                  = f.submit "Create", class: "btn btn-primary"
+
+
+
+- content_for :javascript do
+  :javascript
+    $(function() {
+      console.log("Showing Tracking Javascript Running");
+
+      $("#general_condition").ionRangeSlider({
+        min: 1,
+        max: 5,
+        grid: true,
+        from: 3,
+      });
+
+      $("#neighborhood").ionRangeSlider({
+        min: 1,
+        max: 5,
+        grid: true,
+        from: 3,
+      });
+
+      $("#commute").ionRangeSlider({
+        min: 1,
+        max: 5,
+        grid: true,
+        from: 3,
+      });
+
+      $("#exterior").ionRangeSlider({
+        min: 1,
+        max: 5,
+        grid: true,
+        from: 3,
+      });
+
+      $("#kitchen").ionRangeSlider({
+        min: 1,
+        max: 5,
+        grid: true,
+        from: 3,
+      });
+
+      $("#design").ionRangeSlider({
+        min: 1,
+        max: 5,
+        grid: true,
+        from: 3,
+      });
+      $("#layout").ionRangeSlider({
+        min: 1,
+        max: 5,
+        grid: true,
+        from: 3,
+      });
+      $("#landscaping").ionRangeSlider({
+        min: 1,
+        max: 5,
+        grid: true,
+        from: 3,
+      });
+      $("#schools").ionRangeSlider({
+        min: 1,
+        max: 5,
+        grid: true,
+        from: 3,
+      });
+      $("#master").ionRangeSlider({
+        min: 1,
+        max: 5,
+        grid: true,
+        from: 3,
+      });
+    });

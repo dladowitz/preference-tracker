@@ -1,0 +1,15 @@
+.container
+  = link_to "New Contact", new_contact_path, class: "btn btn-primary"
+
+  %table.table-striped.mt20
+    %tr
+      %th.col-md-3 First Name
+      %th.col-md-3 Email
+      %th.col-md-3 Showings URL
+      %th.col-md-3 All Showings
+    - @contacts.each do |contact|
+      %tr
+        %td= contact.firstname
+        %td= contact.lastname
+        %td= link_to "New Showing", contact.showing_tracking_url__c, class: "text-warning"
+        %td= link_to "view showings", contact_showing_trackings_path(contact), class: "text-danger"

@@ -1,0 +1,24 @@
+.wrapper.wrapper-content.animated.fadeInRight
+  .row
+    .col-lg-7
+      .ibox.float-e-margins
+        .ibox-title
+          %h3
+            Sign In
+        .ibox-content
+          .row
+            .col-sm-10
+
+            = form_tag contact_sessions_path do
+              .form-group
+                = label_tag :email
+                = email_field_tag :email, class: "form-control"
+              .form-group
+                = label_tag :password
+                = password_field_tag :password, 12345, class: "form-control"
+              = submit_tag "Sign In", class: "btn btn-success"
+
+              #password_links.pull-right
+                = link_to "Sign Up", signup_path, class: "blue", id: "signup"
+                |
+                = link_to "Forgot Password", request_password_path, class: "blue"

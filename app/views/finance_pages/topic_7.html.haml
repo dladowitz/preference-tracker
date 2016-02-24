@@ -1,0 +1,73 @@
+.wrapper.wrapper-content.animated.fadeInRight
+  .row
+    .ibox.float-e-margins
+      .ibox-title
+        %h5 Mortgages
+        .ibox-tools
+          %a.collapse-link
+            %i.fa.fa-chevron-up
+      .ibox-content.no-padding
+        %ul.list-group
+          %li.list-group-item
+            %p
+              %strong Types of Loans & Rates
+            %p
+              Conventional
+            %p
+              Government
+            %p
+              %ul
+                %li FHA - low down payment
+                %li VA
+            %p First time home buyer loan
+          %li.list-group-item
+            %p
+              %strong Interest Rates
+            %p
+              Fixed Rate
+            %p Adjustable ARM
+          %li.list-group-item
+            %p
+              %strong Discount Points
+          %li.list-group-item
+            %p
+              %strong Origination Charge
+            %p
+              Application, processing, underwriting fees
+          %li.list-group-item
+            %p
+              %strong Loan Term
+          %li.list-group-item
+            %p
+              %strong APR
+          %li.list-group-item
+            %p
+              %strong Monthly Payments
+            %p
+              Principal, interest, taxes and insurance
+          %li.list-group-item
+            %p
+              %strong Private Mortgage Insurance (PMI)
+          %li.list-group-item
+            %p
+              %strong Loan Types
+            %p Loan A
+            %p FHA
+            %p Special Programs
+            %p Examples
+          %li.list-group-item
+            %p
+              %strong Applying
+            %p Documents
+            %p Financial Property
+            %p Denied Mortgage Loan
+            %p Examples
+      .ibox-footer.text-center
+        -# We should do dynamic pagination along with active page highlighting
+        .btn-group
+          = link_to topic_6_finance_pages_path, class: "btn btn-success finance-footer-button" do
+            %i.fa.fa-chevron-left
+            Previous
+          = link_to topic_8_finance_pages_path, class: "btn btn-success finance-footer-button" do
+            Next
+            %i.fa.fa-chevron-right

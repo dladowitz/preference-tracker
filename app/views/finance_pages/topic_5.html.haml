@@ -1,0 +1,132 @@
+.wrapper.wrapper-content.animated.fadeInRight
+  .row
+    .ibox.float-e-margins
+      .ibox-title
+        %h5 Property Search
+        .ibox-tools
+          %a.collapse-link
+            %i.fa.fa-chevron-up
+      .ibox-content.no-padding
+        %ul.list-group
+          %li.list-group-item
+            %p
+              %strong Market Value & Appraisals
+            %p
+              The type of home to search for is directly linked to the information from the pre-qualification criteria that was established during the initial process.
+            %p
+              The price of the homes is established by the market value and this is something that can be filtered while searching on local real estate sites or national sites like Zillow.
+          %li.list-group-item
+            %p
+              %strong Types of Homes
+            %p
+              %em.text-main House
+              %br
+              These properties are typically single and detached, meaning not connected to any other properties and built for single family units with rights to the property.
+            %p
+              %em.text-main Multi-Family
+              %br
+              These are properties where there is more than one unit owned by one or more parties. Technically, condo and duplexes are multi-family properties, the difference is that the duplex property, surrounding area is listed on a single deed. A deed is the legal document representing the entire property. Condos are owned by each individual and the surrounding land is owned separately and not by each condo owners.
+            %p
+              %em.text-main Townhouse/Townhome
+              %br
+              In many townhome structures, the units are adjacent to each other, meaning the main walls of the building (usually more than one story) are touching and joint ownership of the space around the townhome is owned by the multiple units.
+            %p
+              %em.text-main Condo
+              %br
+              This is a single unit of many units that exist within a building or multiple buildings. While the individual unit is owned, the general areas are shared by all residents. Additional homeowners association fees are standard with condo units.
+          %li.list-group-item
+            %p
+              %strong Listing Titles
+            %p
+              When searching for a home there are many different designations for listings on these sites. Here is a general overview of the types
+            %p
+              %em.text-main MLS Listed House
+              %br
+              This means the property has been entered into the listing service for the local area by an agent or brokerage.
+            %p
+              %em.text-main For Sale by Owner (FSBO, Fisbo)
+              %br
+              These properties are listed by owners not being represented by an agent but may have an MLS number.
+            %p
+              %em.text-main Foreclosed Home
+              %br
+              These homes are not currently for sale, but will be placed on the listing service when the lender/owner is ready to sell.
+          %li.list-group-item
+            %p
+              %strong Listing Status
+            %p
+              %em.text-main Active
+              %br
+              The property is available for for purchase and accepting offers.
+            %p
+              %em.text-main Closed/Sold/Closed Sale
+              %br
+              This indicates that the property has received, accepted an offer now no longer for sale.
+            %p
+              %em.text-main Contingent/Under Contract
+              %br
+              The seller have received and accepted an offer, however, the property is open for backup offers and viewings.
+            %p
+              %em.text-main Pending
+              %br
+              The seller has received an offer, accepted the offer, all contingencies have been met or waived and the final steps of processing the offer are being completed. There may be an opportunity to submit backup offers.
+            %p
+              %em.text-main Price Change
+              %br
+              The price of the property has recently been adjusted, and can include an increase or decrease in price.
+            %p
+              %em.text-main Reduced
+              %br
+              The price of the home has declined recently (last seven days) and the amount of reduction is not specified.
+            %p
+              %em.text-main Withdrawn
+              %br
+              The seller has removed the property from the market.
+          %li.list-group-item
+            %p
+              %strong Home Specifics
+            %p
+              Location, features, amenities.
+            %p
+              %em.text-main Home Address
+              %br
+              The physical address and city location of the property.
+            %p
+              %em.text-main Year Built
+              %br
+              Important to understand repairs and requirements for improvement.
+            %p
+              %em.text-main Bedrooms
+              %br
+              Large determinant of the price.
+            %p
+              %em.text-main Baths
+              %br
+              Determined by the order of magnitudes, 0.5 is half bath consisting of a toilet and sink, 1.0 is a full bathroom that includes a shower/bath tub, sink and toilet, 0.25 would be a sink only or stand alone toilet.
+            %p
+              %em.text-main Square Footage
+              %br
+              The size of the home, depends on the finished area of the home, unfinished basements may not be included.
+            %p
+              %em.text-main Reduced
+              %br
+              The price of the home has declined recently (last seven days) and the amount of reduction is not specified.
+            %p
+              Other items that can be included are crime statistics, location of schools, rating of the school, location of public transportation, parks nearby, entertainment venues and retail options.
+            %p
+              Taking into account the local commute is extremely important for choosing a location, the shorter commutes can improve the cost of living dramatically.
+          %li.list-group-item
+            %p
+              %strong Price Range
+            %p
+              Size of loan payment, loan amount, loan options, current debts, credit history, property value.
+
+      .ibox-footer.text-center
+        -# We should do dynamic pagination along with active page highlighting
+        .btn-group
+          = link_to topic_4_finance_pages_path, class: "btn btn-success finance-footer-button" do
+            %i.fa.fa-chevron-left
+            Previous
+          = link_to topic_6_finance_pages_path, class: "btn btn-success finance-footer-button" do
+            Next
+            %i.fa.fa-chevron-right

@@ -1,0 +1,286 @@
+%nav.navbar-default.navbar-static-side{:role => "navigation"}
+  .sidebar-collapse
+    %ul#side-menu.nav.metismenu
+      %li.nav-header
+        .dropdown.profile-element
+          %span
+            %img.img-circle{:alt => "image", :src => image_url('profile_small.png')}/
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            %span.clear
+              %span.block.m-t-xs
+                %strong.font-bold David Williams
+              %span.text-muted.text-xs.block
+                Art Director
+                %b.caret
+          %ul.dropdown-menu.animated.fadeInRight.m-t-xs
+            %li
+              %a{:href => ""} Profile
+            %li
+              %a{:href => ""} Contacts
+            %li
+              %a{:href => ""} Mailbox
+            %li.divider
+            %li
+              %a{:href => ""} Logout
+      - if current_user
+        .logo-element
+          = link_to contact_path(current_user) do
+            Cap
+      - else
+        .logo-element
+          = link_to "/" do
+            Cap
+      %li{:class => is_active_controller('finances')}
+        %a{:href => ""}
+          %i.fa.fa-usd
+          %span.nav-label Finance Educator
+          %span.fa.arrow
+        %ul{:class => "nav nav-second-level collapse #{is_active_controller('finances')}"}
+          %li{:class => is_active_action('topic_1')}= link_to "Benefits", topic_1_finance_pages_path
+          %li{:class => is_active_action('topic_2')}= link_to "Qualifications", topic_2_finance_pages_path
+          %li{:class => is_active_action('topic_3')}= link_to "Realtor Advantage", topic_3_finance_pages_path
+          %li{:class => is_active_action('topic_4')}= link_to "Morgage Consultant", topic_4_finance_pages_path
+          %li{:class => is_active_action('topic_5')}= link_to "Property Search", topic_4_finance_pages_path
+          %li{:class => is_active_action('topic_6')}= link_to "Offer Process", topic_4_finance_pages_path
+          %li{:class => is_active_action('topic_7')}= link_to "Mortgage", topic_4_finance_pages_path
+          %li{:class => is_active_action('topic_8')}= link_to "Closing", topic_4_finance_pages_path
+      - if current_user
+        %li{:class => is_active_controller('showing_trackings')}
+          %a{:href => ""}
+            %i.fa.fa-bar-chart-o
+            %span.nav-label Tracking Showings
+            %span.fa.arrow
+          %ul{:class => "nav nav-second-level collapse #{is_active_controller('showing_trackings')}"}
+            %li{:class => is_active_action('index')}= link_to "Past Showings", contact_showing_trackings_path(current_user)
+            %li{:class => is_active_action('new')}= link_to "Track A Showing", new_contact_showing_tracking_path(current_user)
+
+        %li{:class => is_active_controller('contacts')}
+          %a{:href => ""}
+            %i.fa.fa-user
+            %span.nav-label Profile
+            %span.fa.arrow
+          %ul{:class => "nav nav-second-level collapse #{is_active_controller('contacts')}"}
+            %li{:class => is_active_action('index')}= link_to "Update Profile", "#"
+
+
+        %li{:class => is_active_controller('layoutsoptions')}
+          = link_to "#" do
+            %i.fa.fa-diamond
+            %span.nav-label Layouts
+            %span.label.label-primary.pull-right NEW
+        %li{:class => is_active_controller('graphs')}
+          %a{:href => "#"}
+            %i.fa.fa-bar-chart-o
+            %span.nav-label Graphs
+            %span.fa.arrow
+          %ul{:class => "nav nav-second-level collapse #{is_active_controller('graphs')}"}
+            %li{:class => is_active_action('flot')}= link_to "Flot Charts", "#"
+            %li{:class => is_active_action('morris')}= link_to "Morris.js Charts", "#"
+            %li{:class => is_active_action('rickshaw')}= link_to "Rickshaw Charts", "#"
+            %li{:class => is_active_action('chartjs')}= link_to "Chart.js", "#"
+            %li{:class => is_active_action('chartist')}= link_to "Chartist", "#"
+            %li{:class => is_active_action('peity')}= link_to "Peity Charts", "#"
+            %li{:class => is_active_action('sparkline')}= link_to "Sparkline Charts", "#"
+        %li{:class => is_active_controller('mailbox')}
+          %a{:href => "#"}
+            %i.fa.fa-envelope
+            %span.nav-label Mailbox
+            %span.label.label-warning.pull-right 16/24
+          %ul{:class => "nav nav-second-level collapse #{is_active_controller('mailbox')}"}
+            %li{:class => is_active_action('inbox')}= link_to "Inbox", "#"
+            %li{:class => is_active_action('email_view')}= link_to "Email view", "#"
+            %li{:class => is_active_action('compose_email')}= link_to "Compose email", "#"
+            %li{:class => is_active_action('email_templates')}= link_to "Email templates", ""#"
+        %li{:class => is_active_controller('metrics')}
+          = link_to "#" do
+            %i.fa.fa-pie-chart
+            %span.nav-label Metrics
+        %li{:class => is_active_controller('widgets')}
+          = link_to "#" do
+            %i.fa.fa-flask
+            %span.nav-label Widgets
+        %li{:class => is_active_controller('forms')}
+          %a{:href => "#"}
+            %i.fa.fa-edit
+            %span.nav-label Forms
+            %span.fa.arrow
+          %ul{:class => "nav nav-second-level collapse #{is_active_controller('forms')}"}
+            %li{:class => is_active_action('basic_forms')}= link_to "Basic form", "#"
+            %li{:class => is_active_action('advanced')}= link_to "Advanced Plugins", "#"
+            %li{:class => is_active_action('wizard')}= link_to "Wizard", "#"
+            %li{:class => is_active_action('file_upload')}= link_to "File Upload", "#"
+            %li{:class => is_active_action('text_editor')}= link_to "Text Editor", "#"
+        %li{:class => is_active_controller('appviews')}
+          %a{:href => "#"}
+            %i.fa.fa-desktop
+            %span.nav-label App Views
+            %span.pull-right.label.label-primary SPECIAL
+          %ul{:class => "nav nav-second-level collapse #{is_active_controller('appviews')}"}
+            %li{:class => is_active_action('contacts')}= link_to "Contacts", "#"
+            %li{:class => is_active_action('profile')}= link_to "Profile", "#"
+            %li{:class => is_active_action('profile_two')}= link_to "Profile v.2", "#"
+            %li{:class => is_active_action('contacts_two')}= link_to "Contacts v.2", ""#"
+            %li{:class => is_active_action('projects')}= link_to "Projects", "#"
+            %li{:class => is_active_action('project_detail')}= link_to "Project detail", "#"
+            %li{:class => is_active_action('teams_board')}= link_to "Teams board", "#"
+            %li{:class => is_active_action('social_feed')}= link_to "Social feed", "#"
+            %li{:class => is_active_action('clients')}= link_to "Clients", "#"
+            %li{:class => is_active_action('outlook_view')}= link_to "Outlook view", "#"
+            %li{:class => is_active_action('vote_list')}= link_to "Vote list", "#"
+            %li{:class => is_active_action('file_menager')}= link_to "File manager", "#"
+            %li{:class => is_active_action('calendar')}= link_to "Calendar", "#"
+            %li{:class => is_active_action('issue_tracker')}= link_to "Issue trakcer", "#"
+            %li{:class => is_active_action('blog')}= link_to "Blog", "#"
+            %li{:class => is_active_action('article')}= link_to "Article", "#"
+            %li{:class => is_active_action('faq')}= link_to "FAQ", "#"
+            %li{:class => is_active_action('timeline')}= link_to "Timeline", "#"
+            %li{:class => is_active_action('pin_board')}= link_to "Pin board", "#"
+        %li{:class => is_active_controller('pages')}
+          %a{:href => "#"}
+            %i.fa.fa-files-o
+            %span.nav-label Other Pages
+            %span.fa.arrow
+          %ul{:class => "nav nav-second-level collapse #{is_active_controller('pages')}"}
+            %li{:class => is_active_action('search_results')}= link_to "Search results", "#"
+            %li{:class => is_active_action('lockscreen')}= link_to "Lockscreen", "#"
+            %li{:class => is_active_action('invoice')}= link_to "Invoice", "#"
+            %li{:class => is_active_action('login')}= link_to "Login", "#"
+            %li{:class => is_active_action('login_2')}= link_to "Login v.2", "#"
+            %li{:class => is_active_action('forgot_password')}= link_to "Forgot password", "#"
+            %li{:class => is_active_action('register')}= link_to "Register", "#"
+            %li{:class => is_active_action('not_found_error')}= link_to "404 Page", "#"
+            %li{:class => is_active_action('internal_server_error')}= link_to "500 Page", "#"
+            %li{:class => is_active_action('empty_page')}= link_to "Empty page", "#"
+        %li{:class => is_active_controller('miscellaneous')}
+          %a{:href => "#"}
+            %i.fa.fa-globe
+            %span.nav-label Miscellaneous
+            %span.label.label-info.pull-right NEW
+          %ul{:class => "nav nav-second-level collapse #{is_active_controller('miscellaneous')}"}
+            %li{:class => is_active_action('notification')}= link_to "Notification", "#"
+            %li{:class => is_active_action('nestablelist')}= link_to "Nestable list", "#"
+            %li{:class => is_active_action('agile_board')}= link_to "Agile board", "#"
+            %li{:class => is_active_action('timeline_second_version')}= link_to "Timeline v.2", "#"
+            %li{:class => is_active_action('diff')}= link_to "Diff", "#"
+            %li{:class => is_active_action('sweet_alert')}= link_to "Sweet alert", "#"
+            %li{:class => is_active_action('idle_timer')}= link_to "Idle timer", "#"
+            %li{:class => is_active_action('spinners')}= link_to "Spinners", "#"
+            %li{:class => is_active_action('live_favicon')}= link_to "Live favicon", "#"
+            %li{:class => is_active_action('google_maps')}= link_to "Google maps", "#"
+            %li{:class => is_active_action('code_editor')}= link_to "Code editor", "#"
+            %li{:class => is_active_action('modal_window')}= link_to "Modal window", "#"
+            %li{:class => is_active_action('forum_view')}= link_to "Forum view", "#"
+            %li{:class => is_active_action('validation')}= link_to "Validation", "#"
+            %li{:class => is_active_action('tree_view')}= link_to "Tree view", "#"
+            %li{:class => is_active_action('chat_view')}= link_to "Chat view", "#"
+            %li{:class => is_active_action('masonry')}= link_to "Masonry", "#"
+        -# %li{:class => is_active_controller('uielements')}
+        -#   %a{:href => "#"}
+        -#     %i.fa.fa-flask
+        -#     %span.nav-label UI Elements
+        -#     %span.fa.arrow
+        -#   %ul{:class => "nav nav-second-level collapse #{is_active_controller('uielements')}"}
+        -#     %li{:class => is_active_action('typography')}= link_to "Typography", uielements_typography_path
+        -#     %li{:class => is_active_action('icons')}= link_to "Icons", uielements_icons_path
+        -#     %li{:class => is_active_action('draggable_panels')}= link_to "Draggable Panels", uielements_draggable_panels_path
+        -#     %li{:class => is_active_action('buttons')}= link_to "Buttons", uielements_buttons_path
+        -#     %li{:class => is_active_action('video')}= link_to "Video", uielements_video_path
+        -#     %li{:class => is_active_action('tables_panels')}= link_to "Panels", uielements_tables_panels_path
+        -#     %li{:class => is_active_action('tabs')}= link_to "Tabs", uielements_tabs_path
+        -#     %li{:class => is_active_action('notifications_tooltips')}= link_to "Notifications & Tooltips", uielements_notifications_tooltips_path
+        -#     %li{:class => is_active_action('badges_labels_progress')}= link_to "Badges, Labels, Progress", uielements_badges_labels_progress_path
+        -# %li{:class => is_active_controller('gridoptions')}
+        -#   = link_to gridoptions_index_path do
+        -#     %i.fa.fa-laptop
+        -#     %span.nav-label Grid options
+        -# %li{:class => is_active_controller('tables')}
+        -#   %a{:href => "#"}
+        -#     %i.fa.fa-table
+        -#     %span.nav-label Tables
+        -#     %span.fa.arrow
+        -#   %ul{:class => "nav nav-second-level collapse #{is_active_controller('tables')}"}
+        -#     %li{:class => is_active_action('static_tables')}= link_to "Static Tables", tables_static_tables_path
+        -#     %li{:class => is_active_action('data_tables')}= link_to "Data Tables", tables_data_tables_path
+        -#     %li{:class => is_active_action('foo_tables')}= link_to "Foo Table", tables_foo_tables_path
+        -#     %li{:class => is_active_action('jqgrid')}= link_to "jqGrid", tables_jqgrid_path
+        -# %li{:class => is_active_controller('commerce')}
+        -#   %a{:href => "#"}
+        -#     %i.fa.fa-shopping-cart
+        -#     %span.nav-label E-commerce
+        -#     %span.fa.arrow
+        -#   %ul{:class => "nav nav-second-level collapse #{is_active_controller('commerce')}"}
+        -#     %li{:class => is_active_action('products_grid')}= link_to "Products grid", commerce_products_grid_path
+        -#     %li{:class => is_active_action('products_list')}= link_to "Products list", commerce_products_list_path
+        -#     %li{:class => is_active_action('product_edit')}= link_to "Product edit", commerce_product_edit_path
+        -#     %li{:class => is_active_action('product_detail')}= link_to "Product detail", commerce_product_detail_path
+        -#     %li{:class => is_active_action('orders')}= link_to "Orders", commerce_orders_path
+        -#     %li{:class => is_active_action('payments')}= link_to "Credit Card form", commerce_payments_path
+        -# %li{:class => is_active_controller('gallery')}
+        -#   %a{:href => "#"}
+        -#     %i.fa.fa-picture-o
+        -#     %span.nav-label Gallery
+        -#     %span.fa.arrow
+        -#   %ul{:class => "nav nav-second-level collapse #{is_active_controller('gallery')}"}
+        -#     %li{:class => is_active_action('basic_gallery')}= link_to "Lightbox Gallery", gallery_basic_gallery_path
+        -#     %li{:class => is_active_action('slick_carusela')}= link_to "Slick Carousel", gallery_slick_carusela_path
+        -#     %li{:class => is_active_action('bootstrap_carusela')}= link_to "Bootstrap Carousel", gallery_bootstrap_carusela_path
+        %li
+          %a{:href => "#"}
+            %i.fa.fa-sitemap
+            %span.nav-label Menu Levels
+            %span.fa.arrow
+          %ul.nav.nav-second-level
+            %li
+              %a{:href => "#"}
+                Third Level
+                %span.fa.arrow
+              %ul.nav.nav-third-level
+                %li
+                  %a{:href => "#"} Third Level Item
+                %li
+                  %a{:href => "#"} Third Level Item
+                %li
+                  %a{:href => "#"} Third Level Item
+            %li
+              %a{:href => "#"} Second Level Item
+            %li
+              %a{:href => "#"} Second Level Item
+            %li
+              %a{:href => "#"} Second Level Item
+        %li{:class => is_active_controller('cssanimations')}
+          = link_to "#" do
+            %i.fa.fa-magic
+            %span.nav-label CSS Animations
+            %span.label.label-info.pull-right 62
+        %li.landing_link
+          = link_to "#" do
+            %i.fa.fa-star
+            %span.nav-label Landing page
+
+
+-# %nav.navbar-default.navbar-static-side{:role => "navigation"}
+-#   .sidebar-collapse
+-#     %ul#side-menu.nav
+-#       %li.nav-header
+-#         .dropdown.profile-element
+-#           %h2
+-#             = link_to "LaunchIt", user_path(current_user)
+-#           %span
+-#             %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+-#               %span.clear
+-#                 %span.block.m-t-xs
+-#                   %strong.font-bold
+-#                     = link_to current_user.first_name.capitalize, edit_user_path(current_user)
+-#             %ul.dropdown-menu.animated.fadeInRight.m-t-xs
+-#               %li
+-#                 %a{:href => "login.html"} Logout
+-#         .logo-element
+-#           IN+
+-#       %li.active
+-#         %a{:href => "#{user_path(current_user)}"}
+-#           %i.fa.fa-dashboard.fa-2x
+-#           %span.nav-label My Dashboard
+-#       %li
+-#         %a{:href => "#{users_path}"}
+-#           %i.fa.fa-user.fa-2x
+-#           %span.nav-label Find Users

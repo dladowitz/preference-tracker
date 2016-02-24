@@ -1,0 +1,88 @@
+.wrapper.wrapper-content.animated.fadeInRight
+  .row
+    - @showing_trackings.each do |showing_tracking|
+      .col-lg-4.col-sm-12
+        .ibox.float-e-margins
+          .ibox-title
+            %h3
+              = showing_tracking.showing_street_address__c
+              ,
+              = showing_tracking.showing_city__c
+          .ibox-content
+            %h4 Basics
+            %table
+              %tr
+                %td.col-sm-3
+                  %strong Price
+                %td= number_to_currency(showing_tracking.showing_price__c, precision: 0)
+              %tr
+                %td.col-sm-3
+                  %strong Sq Feet
+                %td= number_with_delimiter showing_tracking.showing_square_footage__c
+              %tr
+                %td.col-sm-3
+                  %strong Beds
+                %td= number_with_precision(showing_tracking.showing_of_bedrooms__c, precision: 0)
+              %tr
+                %td.col-sm-3
+                  %strong Baths
+                %td= number_with_precision(showing_tracking.showing_of_bathrooms__c, precision: 0)
+
+            - if showing_tracking.showing_general_condition__c
+              .mt20
+                %h4 General Condition
+                .progress.progress-mini
+                  .progress-bar{style: "width: #{(showing_tracking.showing_general_condition__c / 5 * 100)}%;"}
+
+            - if showing_tracking.showing_neighborhood__c
+              .mt20
+                %h4 Neighborhood
+                .progress.progress-mini
+                  .progress-bar{style: "width: #{(showing_tracking.showing_neighborhood__c / 5 * 100)}%;"}
+
+            - if showing_tracking.showing_commute__c
+              .mt20
+                %h4 Commute
+                .progress.progress-mini
+                  .progress-bar{style: "width: #{(showing_tracking.showing_commute__c / 5 * 100)}%;"}
+
+            - if showing_tracking.showing_exterior__c
+              .mt20
+                %h4 Exterior
+                .progress.progress-mini
+                  .progress-bar{style: "width: #{(showing_tracking.showing_exterior__c / 5 * 100)}%;"}
+
+            - if showing_tracking.showing_kitchen__c
+              .mt20
+                %h4 Kitchen
+                .progress.progress-mini
+                  .progress-bar{style: "width: #{(showing_tracking.showing_kitchen__c / 5 * 100)}%;"}
+            - if showing_tracking.showing_design_personality__c
+              .mt20
+                %h4 Design Personality
+                .progress.progress-mini
+                  .progress-bar{style: "width: #{(showing_tracking.showing_design_personality__c   / 5 * 100)}%;"}
+            - if showing_tracking.showing_home_layout__c
+              .mt20
+                %h4 Home Layout
+                .progress.progress-mini
+                  .progress-bar{style: "width: #{(showing_tracking.showing_home_layout__c   / 5 * 100)}%;"}
+            - if showing_tracking.showing_land_scaping__c
+              .mt20
+                %h4 Landscaping
+                .progress.progress-mini
+                  .progress-bar{style: "width: #{(showing_tracking.showing_land_scaping__c/ 5 * 100)}%;"}
+            - if showing_tracking.showing_local_schools__c
+              .mt20
+                %h4 Local Schools
+                .progress.progress-mini
+                  .progress-bar{style: "width: #{(showing_tracking.showing_local_schools__c / 5 * 100)}%;"}
+            - if showing_tracking.showing_master_bedroom__c
+              .mt20
+                %h4 Master Bedroom
+                .progress.progress-mini
+                  .progress-bar{style: "width: #{(showing_tracking.showing_master_bedroom__c / 5 * 100)}%;"}
+            - if showing_tracking.showing_notes__c
+              .mt20
+                %h4 Notes
+                %p= showing_tracking.showing_notes__c

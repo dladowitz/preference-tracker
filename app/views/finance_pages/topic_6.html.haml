@@ -1,0 +1,62 @@
+.wrapper.wrapper-content.animated.fadeInRight
+  .row
+    .ibox.float-e-margins
+      .ibox-title
+        %h5 Offer Process
+        .ibox-tools
+          %a.collapse-link
+            %i.fa.fa-chevron-up
+      .ibox-content.no-padding
+        %ul.list-group
+          %li.list-group-item
+            %p
+              %strong Pre-Approvals
+            %p
+              The type of home to search for is directly linked to the information from the pre-qualification criteria that was established during the initial process.
+            %p
+              The price of the homes is established by the market value and this is something that can be filtered while searching on local real estate sites or national sites like Zillow.
+          %li.list-group-item
+            %p
+              %strong Making an Offer
+            %p
+              %ul
+                %li Buyer's Budget
+                %li Seller's Motivation
+                %li All Cash or Financed?
+                %li Buyer or Seller Market?
+                %li Time on the Market
+                %li Comparative Market Analysis (CMA) Results
+          %li.list-group-item
+            %p
+              %strong Purchase Contract
+          %li.list-group-item
+            %p
+              %strong Inspection
+          %li.list-group-item
+            %p
+              %strong Negotiation
+            %p
+              %ul
+                %li Offer is too low
+                %li Sellers are selling to another buyer
+                %li Terms no acceptable
+                %li Youre financing options are not acceptable
+                %li Buyers agent pisses off sellers
+          %li.list-group-item
+            %p
+              %strong Issues
+            %p
+              %ul
+                %li Have buyer agent ask seller agent for feedback on the offer.
+                %li Have a quick meeting to talk over offer strategies
+                %li Focus on scheduled upcoming showings
+
+      .ibox-footer.text-center
+        -# We should do dynamic pagination along with active page highlighting
+        .btn-group
+          = link_to topic_5_finance_pages_path, class: "btn btn-success finance-footer-button" do
+            %i.fa.fa-chevron-left
+            Previous
+          = link_to topic_7_finance_pages_path, class: "btn btn-success finance-footer-button" do
+            Next
+            %i.fa.fa-chevron-right
