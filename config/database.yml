@@ -2,7 +2,7 @@ development:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  database: captivate_app_development
+  database: preference_tracker_development
   username: david
   password:
 
@@ -10,7 +10,7 @@ test:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  database: captivate_app_test
+  database: preference_tracker_test
   username: david
   password:
 

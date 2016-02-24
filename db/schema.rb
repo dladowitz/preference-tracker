@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 20150325180941) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "hstore"
 
   create_table "password_resets", force: :cascade do |t|
     t.integer  "user_id"

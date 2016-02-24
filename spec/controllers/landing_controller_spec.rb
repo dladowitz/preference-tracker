@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 
-describe LandingPagesController do
+describe LandingController do
   describe "GET landing" do
-    subject { get :landing }
+    subject { get :index }
 
     it "returns the landing template" do
       subject

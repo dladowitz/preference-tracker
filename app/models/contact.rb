@@ -22,6 +22,7 @@
 #  deal_breaker_feature_1__c               :string(40)
 #  favorite_feature_3__c                   :string(40)
 #  showing_tracking_url__c                 :string(255)
+#  password_digest                         :string(255)
 #
 
 class Contact < ActiveRecord::Base
