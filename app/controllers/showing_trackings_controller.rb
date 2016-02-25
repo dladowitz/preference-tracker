@@ -26,7 +26,7 @@ class ShowingTrackingsController < ApplicationController
     params.require(:showing_tracking).permit(:street_address, :city, :price, :square_footage,
                                              :bedrooms, :bathrooms, :general_condition, :seighborhood,
                                              :commute, :exterior, :kitchen, :design_personality,
-                                             :home_layout, :land_scaping, :local_schools, :master_bedroom,
+                                             :home_layout, :landscaping, :local_schools, :master_bedroom,
                                              :notes)
   end
 

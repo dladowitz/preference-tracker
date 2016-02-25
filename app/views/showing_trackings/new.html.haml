@@ -15,58 +15,58 @@
 
               -# %h3.m-t-none.m-b Create a Contact
               -# %p Sign in today for more expirience.
-              = form_for [@contact, @showing_tracking] do |f|
+              = form_for [@user, @showing_tracking] do |f|
                 .form-group
-                  = f.label :showing_street_address__c, "Street Address"
-                  = f.text_field :showing_street_address__c, class: "form-control"
+                  = f.label :street_address, "Street Address"
+                  = f.text_field :street_address, class: "form-control"
                 .form-group
-                  = f.label :showing_city__c, "City"
-                  = f.text_field :showing_city__c, class: "form-control"
+                  = f.label :city, "City"
+                  = f.text_field :city, class: "form-control"
                   .form-group
-                  = f.label :showing_price__c, "Price"
-                  = f.number_field :showing_price__c, class: "form-control"
+                  = f.label :price, "Price"
+                  = f.number_field :price, class: "form-control"
                   .form-group
-                  = f.label :showing_square_footage__c, "Square Footage"
-                  = f.number_field :showing_square_footage__c, class: "form-control"
+                  = f.label :square_footage, "Square Footage"
+                  = f.number_field :square_footage, class: "form-control"
                   .form-group
-                  = f.label :showing_of_bedrooms__c, "Num of Bedrooms"
-                  = f.number_field :showing_of_bedrooms__c, class: "form-control"
+                  = f.label :bedrooms, "Num of Bedrooms"
+                  = f.number_field :bedrooms, class: "form-control"
                   .form-group
-                  = f.label :showing_of_bathrooms__c, "Num of Bathrooms"
-                  = f.number_field :showing_of_bathrooms__c, class: "form-control"
+                  = f.label :bathrooms, "Num of Bathrooms"
+                  = f.number_field :bathrooms, class: "form-control"
                 .form-group
-                  = f.label :showing_general_condition__c, "General Condition"
-                  = f.hidden_field :showing_general_condition__c, id: "general_condition"
+                  = f.label :general_condition, "General Condition"
+                  = f.hidden_field :general_condition, id: "general_condition"
                 .form-group
-                  = f.label :showing_neighborhood__c, "Neighborhood"
-                  = f.hidden_field :showing_neighborhood__c, id: "neighborhood"
+                  = f.label :neighborhood, "Neighborhood"
+                  = f.hidden_field :neighborhood, id: "neighborhood"
                 .form-group
-                  = f.label :showing_commute__c, "Commute"
-                  = f.hidden_field :showing_commute__c, id: "commute"
+                  = f.label :commute, "Commute"
+                  = f.hidden_field :commute, id: "commute"
                 .form-group
-                  = f.label :showing_exterior__c, "Exterior"
-                  = f.hidden_field :showing_exterior__c, id: "exterior"
+                  = f.label :exterior, "Exterior"
+                  = f.hidden_field :exterior, id: "exterior"
                 .form-group
-                  = f.label :showing_kitchen__c, "Kitchen"
-                  = f.hidden_field :showing_kitchen__c, id: "kitchen"
+                  = f.label :kitchen, "Kitchen"
+                  = f.hidden_field :kitchen, id: "kitchen"
                 .form-group
-                  = f.label :showing_design_personality__c, "Design Personality"
-                  = f.hidden_field :showing_design_personality__c, id: "design"
+                  = f.label :design_personality, "Design Personality"
+                  = f.hidden_field :design_personality, id: "design"
                 .form-group
-                  = f.label :showing_home_layout__c, "Home Layout"
-                  = f.hidden_field :showing_home_layout__c, id: "layout"
+                  = f.label :home_layout, "Home Layout"
+                  = f.hidden_field :home_layout, id: "layout"
                 .form-group
-                  = f.label :showing_land_scaping__c, "Landscaping"
-                  = f.hidden_field :showing_land_scaping__c, id: "landscaping"
+                  = f.label :landscaping, "Landscaping"
+                  = f.hidden_field :landscaping, id: "landscaping"
                 .form-group
-                  = f.label :showing_local_schools__c, "Local Schools"
-                  = f.hidden_field :showing_local_schools__c, id: "schools"
+                  = f.label :local_schools, "Local Schools"
+                  = f.hidden_field :local_schools, id: "schools"
                 .form-group
-                  = f.label :showing_master_bedroom__c, "Master Bedroom"
-                  = f.hidden_field :showing_master_bedroom__c, id: "master"
+                  = f.label :master_bedroom, "Master Bedroom"
+                  = f.hidden_field :master_bedroom, id: "master"
                 .form-group
-                  = f.label :showing_notes__c, "Notes"
-                  = f.text_area :showing_notes__c, class: "form-control"
+                  = f.label :notes, "Notes"
+                  = f.text_area :notes, class: "form-control"
                 .form-group
                   = f.submit "Create", class: "btn btn-primary"
 
