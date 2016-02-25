@@ -1,21 +1,20 @@
 class ShowingTrackingsController < ApplicationController
+  before_filter :set_user
+
   def index
-    @user = User.find params[:user_id]
-    # @showing_trackings = @user.showing_trackings
+    @showing_trackings = @user.showing_trackings
   end
 
   def new
-    @contact = Contact.find params[:contact_id]
-    @showing_tracking = @contact.showing_trackings.new
+    @showing_tracking = @user.showing_trackings.new
   end
 
 
   def create
-    @contact = Contact.find params[:contact_id]
-    @showing_tracking = @contact.showing_trackings.new showing_tracking_params
+    @showing_tracking = @user.showing_trackings.new showing_tracking_params
 
     if @showing_tracking.save
-      redirect_to contact_showing_trackings_path(@contact)
+      redirect_to user_showing_trackings_path(@user)
     else
       render :new
     end
@@ -24,10 +23,14 @@ class ShowingTrackingsController < ApplicationController
   private
 
   def showing_tracking_params
-    params.require(:showing_tracking).permit(:showing_street_address__c, :showing_city__c, :showing_price__c, :showing_square_footage__c,
-                                             :showing_of_bedrooms__c, :showing_of_bathrooms__c, :showing_general_condition__c, :showing_neighborhood__c,
-                                             :showing_commute__c, :showing_exterior__c, :showing_kitchen__c, :showing_design_personality__c,
-                                             :showing_home_layout__c, :showing_land_scaping__c, :showing_local_schools__c, :showing_master_bedroom__c,
-                                             :showing_notes__c)
+    params.require(:showing_tracking).permit(:street_address, :city, :price, :square_footage,
+                                             :bedrooms, :bathrooms, :general_condition, :seighborhood,
+                                             :commute, :exterior, :kitchen, :design_personality,
+                                             :home_layout, :land_scaping, :local_schools, :master_bedroom,
+                                             :notes)
+  end
+
+  def set_user
+    @user = User.find params[:user_id]
   end
 end

@@ -51,8 +51,8 @@
             %span.nav-label Tracking Showings
             %span.fa.arrow
           %ul{:class => "nav nav-second-level collapse #{is_active_controller('showing_trackings')}"}
-            %li{:class => is_active_action('index')}= link_to "Past Showings", contact_showing_trackings_path(current_user)
-            %li{:class => is_active_action('new')}= link_to "Track A Showing", new_contact_showing_tracking_path(current_user)
+            %li{:class => is_active_action('index')}= link_to "Past Showings", user_showing_trackings_path(current_user)
+            %li{:class => is_active_action('new')}= link_to "Track A Showing", new_user_showing_tracking_path(current_user)
 
         %li{:class => is_active_controller('contacts')}
           %a{:href => ""}
