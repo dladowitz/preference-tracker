@@ -19,10 +19,10 @@ class UsersController < ApplicationController
       flash[:success] = "You did it. You successfully signed up. Hi-five!"
 
       #TODO Mailer should be sent asyncronously. Need to change so not to hold up the controller
-      UserMailer.signup_email(@user).deliver
+      # UserMailer.signup_email(@user).deliver
 
       session[:id] = @user.id
-      redirect_to user_path(@user)
+      redirect_to user_showing_trackings_path(@user)
     else
       render :new #, layout: "guest_pages/guest_layout"
     end
