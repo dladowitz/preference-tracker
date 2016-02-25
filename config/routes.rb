@@ -13,7 +13,9 @@ Rails.application.routes.draw do
 
 
   # resource routes
-  resources :users
+  resources :users do
+    resources :showing_trackings, only: [:index, :new, :create]
+  end
 
   resources :finance_pages, only: [] do
     collection do
@@ -34,8 +36,6 @@ Rails.application.routes.draw do
     collection do
       post "email_lookup"
     end
-
-    resources :showing_trackings, only: [:index, :new, :create]
   end
 
   resources :sessions, only: [:new, :create, :destroy]

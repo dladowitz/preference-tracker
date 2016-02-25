@@ -1,7 +1,7 @@
 class ShowingTrackingsController < ApplicationController
   def index
-    @contact = Contact.find params[:contact_id]
-    @showing_trackings = @contact.showing_trackings
+    @user = User.find params[:user_id]
+    # @showing_trackings = @user.showing_trackings
   end
 
   def new
