@@ -14,19 +14,9 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:password])
       session[:id] = @user.id
 
-      if @user.try(:first_name)
-        flash[:success] = "Welcome, #{@user.first_name}"
-      else
-        flash[:success] = "Welcome, #{@user.firstname}"
-      end
+      flash[:success] = "Welcome, #{@user.first_name}"
 
-      if @user.class.name == "User"
-        redirect_to user_path(@user)
-      else
-        @contact = @user
-        redirect_to contact_path(@contact)
-      end
-
+      redirect_to user_showing_trackings_path(@user)
     else
       flash[:danger] = "Username and/or Password dont appear to be correct"
       redirect_to signin_path
