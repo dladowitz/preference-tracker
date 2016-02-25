@@ -1,5 +1,11 @@
 .wrapper.wrapper-content.animated.fadeInRight
   .row
+    - unless @showing_trackings.any?
+      %h2 You Haven't Reviewed Any Homes yet
+      %h3.mt20
+        Lets do that now:
+        = link_to "Review", new_user_showing_tracking_path(@user), class: "btn btn-xs btn-warning"
+
     - @showing_trackings.each do |showing_tracking|
       .col-lg-4.col-sm-12
         .ibox.float-e-margins
