@@ -4,6 +4,7 @@
       %li.nav-header
         .dropdown.profile-element
           %span
+            %h3.text-white Home Tracker
             %img.img-circle{:alt => "image", :src => image_url('profile_small.png')}/
           %a{:href => "#{current_user ? user_showing_trackings_path(current_user) : nil}"}
             %span.clear
@@ -26,11 +27,11 @@
       - if current_user
         .logo-element
           = link_to contact_path(current_user) do
-            Cap
+            HT
       - else
         .logo-element
           = link_to "/" do
-            Cap
+            HT
       -# %li{:class => is_active_controller('finances')}
       -#   %a{:href => ""}
       -#     %i.fa.fa-usd
