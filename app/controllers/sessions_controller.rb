@@ -6,9 +6,9 @@ class SessionsController < ApplicationController
     @user = User.find_by_email params[:email]
 
     # Both User and Contact objects can log in. This might get crazy.
-    unless @user
-      @user = Contact.find_by_email params[:email]
-    end
+    # unless @user
+    #   @user = Contact.find_by_email params[:email]
+    # end
 
 
     if @user && @user.authenticate(params[:password])

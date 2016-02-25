@@ -1,11 +1,11 @@
 %main#main.site-main
   .container
     .row
-      .col-sm-4.col-sm-offset-4
+      .col-sm-7
         -#validates errors div
         = render "layouts/validation_errors", :model => @user
 
-      .col-xs-4.col-xs-offset-4
+      .col-xs-7
         %h1 Sign Up
 
         = form_for @user do |f|
@@ -25,7 +25,7 @@
             = f.submit "Sign Up", class: "btn btn-success"
 
     .row.mt50
-      .col-xs-4.col-xs-offset-4.text-left
+      .col-xs-7.text-left
         %i.fa.fa-envelope.mr10
         We promise never do anything uncool with your info
     -#TODO strange issue with different versions of bootstrap or theme being used for btn-large on render vs redirect
