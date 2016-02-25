@@ -26,7 +26,7 @@
           -#     %a{:href => ""} Logout
       - if current_user
         .logo-element
-          = link_to contact_path(current_user) do
+          = link_to user_path(current_user) do
             HT
       - else
         .logo-element
