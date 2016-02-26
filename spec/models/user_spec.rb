@@ -16,13 +16,19 @@ describe User do
   end
 
   it "can be set as an agent" do
-    user = create :user, agent: true
-    expect(user.agent).to be true
+    user = create :user, is_agent: true
+    expect(user.is_agent).to be true
   end
 
   it "can have clients" do
-    agent = create :user, agent: true
+    agent = create :user, is_agent: true
     client = create :user, agent_id: agent.id
     expect(agent.clients).to include client
+  end
+
+  it "can have one agent" do
+    agent = create :user, is_agent: true
+    client = create :user, agent_id: agent.id
+    expect(client.agent).to eq agent
   end
 end
