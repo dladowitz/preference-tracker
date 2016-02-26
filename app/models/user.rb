@@ -10,6 +10,7 @@
 #  admin           :boolean
 #  created_at      :datetime
 #  updated_at      :datetime
+#  agent           :boolean
 #
 
 class User < ActiveRecord::Base

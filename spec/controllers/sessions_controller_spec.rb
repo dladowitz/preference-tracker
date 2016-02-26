@@ -25,8 +25,8 @@ describe SessionsController do
         expect(flash[:success]).to eq "Welcome, #{user.first_name}"
       end
 
-      it "redirects to the user show page" do
-        expect(response).to redirect_to user_path(user)
+      it "redirects to the showing_tracking index page" do
+        expect(response).to redirect_to user_showing_trackings_path(user)
       end
 
       it "finds the user" do

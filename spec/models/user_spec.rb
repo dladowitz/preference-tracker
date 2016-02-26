@@ -14,4 +14,15 @@ describe User do
     user = create :user
     expect(user).to be_instance_of User
   end
+
+  it "can be set as an agent" do
+    user = create :user, agent: true
+    expect(user.agent).to be true
+  end
+
+  it "can have clients" do
+    agent = create :user, agent: true
+    client = create :user, agent_id: agent.id
+    expect(agent.clients).to include client
+  end
 end
