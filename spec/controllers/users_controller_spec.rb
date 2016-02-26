@@ -17,10 +17,14 @@ describe UsersController do
   describe "POST create" do
 
     context "with valid params" do
-      subject { post :create, user: {first_name: "Andre", email: "Andre.Ampere@gmail.com", password: "asdfasdf", password_confirmation: "asdfasdf" } }
 
       it "creates a new user in the database" do
-        expect{ subject }.to change{ User.count }.by 1
+        expect{ post :create, user: {first_name: "Andre", email: "Andre.Ampere@gmail.com", password: "asdfasdf", password_confirmation: "asdfasdf" } }.to change{ User.count }.by 1
+      end
+
+      it "create a new user as an agent" do
+        post :create, user: {first_name: "Andre", email: "Andre.Ampere@gmail.com", is_agent: true, password: "asdfasdf", password_confirmation: "asdfasdf"}
+        expect(assigns(:user).is_agent).to be true
       end
     end
 
