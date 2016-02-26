@@ -10,7 +10,8 @@
 #  admin           :boolean
 #  created_at      :datetime
 #  updated_at      :datetime
-#  agent           :boolean
+#  agent_id        :integer
+#  is_agent        :boolean
 #
 
 class User < ActiveRecord::Base
@@ -25,6 +26,10 @@ class User < ActiveRecord::Base
   has_secure_password
   has_many :password_resets
   has_many :showing_trackings
+
+  # Should totally subclass this into agent and client classes
+  belongs_to :agent,   class_name: "User", foreign_key: "agent_id"
+  has_many   :clients, class_name: "User", foreign_key: "agent_id"
 
 
   ### Instance Methods
