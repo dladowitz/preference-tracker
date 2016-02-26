@@ -16,6 +16,9 @@
             = f.label :email, class: "label-control"
             = f.text_field :email, class: "form-control"
           .form-group
+            = f.label :is_agent, "Are You An Agent or a Buyer?", class: "label-control"
+            = f.select :is_agent, [["Buyer", 0],["Agent", 1]], class: "form-control"
+          .form-group
             = f.label :password, class: "label-control"
             = f.password_field :password, class: "form-control"
           .form-group
