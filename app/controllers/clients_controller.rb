@@ -1,2 +1,4 @@
-class ClientsController
+class ClientsController < ApplicationController
+  def index
+  end
 end

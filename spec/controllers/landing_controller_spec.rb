@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-
 describe LandingController do
   describe "GET landing" do
     subject { get :index }

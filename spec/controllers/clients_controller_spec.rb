@@ -17,11 +17,11 @@ describe ClientsController do
 
     it "finds the correct agent" do
       subject
-      expect(assigns(:agent).to eq @agent
+      expect(assigns(:agent)).to eq @agent
     end
 
     it "finds all the agent's clients" do
-      subject 
+      subject
       expect(assign(:clients)).to include [@client1, @client2]
     end
   end
