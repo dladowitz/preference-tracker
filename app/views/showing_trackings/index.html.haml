@@ -1,10 +1,12 @@
 .wrapper.wrapper-content.animated.fadeInRight
   .row
-    - unless @showing_trackings.any?
-      %h2 You Haven't Reviewed Any Homes yet
+    - if @showing_trackings.empty? && current_user == @user
+      %h2 You Haven't Reviewed Any Homes Yet
       %h3.mt20
         Lets do that now:
         = link_to "Review", new_user_showing_tracking_path(@user), class: "btn btn-xs btn-warning"
+    - elsif current_user != @user
+      %h2=  "#{@user.first_name} Hasn't Reviewed Any Homes Yet"
 
     - @showing_trackings.each do |showing_tracking|
       .col-lg-4.col-sm-12

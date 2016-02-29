@@ -1,9 +1,15 @@
 .row
   .col-lg-8
     .ibox.float-e-margins
+      .ibox-title
+        %h3
+          Clients
+
       .ibox-content
         .row
+          -# .ibox-tools
+          -# = link_to "Add A Client", new_user_client_path(@agent), class: "btn btn-primary pull-right"
           %ul
             - @clients.each do |client|
               %li
-                %h2= link_to client.first_name.capitalize, client_path(user)
+                %h2= link_to client.first_name.capitalize, user_showing_trackings_path(client)

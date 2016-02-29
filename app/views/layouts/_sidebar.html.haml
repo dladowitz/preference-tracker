@@ -57,8 +57,8 @@
             %li{:class => is_active_action('new')}= link_to "Track A Showing", new_user_showing_tracking_path(current_user)
 
         - if current_user.is_agent?
-          %li{:class => is_active_controller('showing_trackings')}
-            = link_to "#" do
+          %li{:class => is_active_controller('clients')}
+            = link_to user_clients_path(current_user) do
               %i.fa.fa-user
               %span.nav-label Clients
 

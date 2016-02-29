@@ -33,7 +33,7 @@
                   = f.number_field :bedrooms, class: "form-control"
                   .form-group
                   = f.label :bathrooms, "Num of Bathrooms"
-                  = f.number_field :bathrooms, class: "form-control"
+                  = f.number_field :bathrooms, class: "form-control", step: 0.5
                 .form-group
                   = f.label :general_condition, "General Condition"
                   = f.hidden_field :general_condition, id: "general_condition"
