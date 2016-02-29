@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   # resource routes
   resources :users do
     resources :showing_trackings, only: [:index, :new, :create]
+    resources :clients
   end
 
   resources :finance_pages, only: [] do

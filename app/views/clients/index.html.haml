@@ -1,0 +1,9 @@
+.row
+  .col-lg-8
+    .ibox.float-e-margins
+      .ibox-content
+        .row
+          %ul
+            - @clients.each do |client|
+              %li
+                %h2= link_to client.first_name.capitalize, client_path(user)

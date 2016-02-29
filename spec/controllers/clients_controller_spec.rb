@@ -22,7 +22,7 @@ describe ClientsController do
 
     it "finds all the agent's clients" do
       subject
-      expect(assign(:clients)).to include [@client1, @client2]
+      expect(assigns(:clients)).to include(@client1, @client2)
     end
   end
 end
