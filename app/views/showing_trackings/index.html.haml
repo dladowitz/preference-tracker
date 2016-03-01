@@ -8,6 +8,7 @@
     - elsif current_user != @user
       %h2=  "#{@user.first_name} Hasn't Reviewed Any Homes Yet"
 
+    =link_to "Track a Showing", new_user_showing_tracking_path(@user), class: "btn btn-primary m-l-md m-b-md"
     - @showing_trackings.each do |showing_tracking|
       .col-lg-4.col-sm-12
         .ibox.float-e-margins

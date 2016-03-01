@@ -2,7 +2,7 @@ class ShowingTrackingsController < ApplicationController
   before_filter :set_user
 
   def index
-    @showing_trackings = @user.showing_trackings
+    @showing_trackings = @user.showing_trackings.reverse
   end
 
   def new
@@ -12,6 +12,7 @@ class ShowingTrackingsController < ApplicationController
 
   def create
     @showing_tracking = @user.showing_trackings.new showing_tracking_params
+    normalize_price
 
     if @showing_tracking.save
       redirect_to user_showing_trackings_path(@user)
@@ -32,5 +33,20 @@ class ShowingTrackingsController < ApplicationController
 
   def set_user
     @user = User.find params[:user_id]
+  end
+
+  # TODO build tests for this
+  def normalize_price
+    normalized_price = showing_tracking_params[:price]
+
+    if showing_tracking_params[:price].include? "$"
+      normalized_price = showing_tracking_params[:price].gsub("$", "")
+    end
+
+    if normalized_price.include? ","
+      normalized_price = normalized_price.gsub(",", "")
+    end
+
+    @showing_tracking.price = normalized_price
   end
 end
