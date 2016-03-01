@@ -22,6 +22,9 @@
           .form-group
             = f.label :email, class: "label-control"
             = f.text_field :email, class: "form-control"
+          .form-group
+            = f.hidden_field :agent_id, value: @agent.id
+
           - unless @agent
             .form-group
               = f.label :is_agent, "Are You An Agent or a Buyer?", class: "label-control"
