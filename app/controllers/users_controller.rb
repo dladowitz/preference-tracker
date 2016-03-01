@@ -7,8 +7,13 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new
-    @agents = User.agents.order(:first_name)
+    if params[:agent_id]
+      @agent = User.find params[:agent_id]
+      @user = @agent.clients.new
+    else
+      @user = User.new
+      @agents = User.agents.order(:first_name)
+    end
 
     # render layout: "guest_pages/guest_layout"
   end

@@ -2,9 +2,10 @@ Rails.application.routes.draw do
   root to: "landing#index"
 
   # custom routes
-  get    :landing,     to: "landing#index",              as: :landing
-  get    :signin,      to: "sessions#new",               as: :signin
-  get    :signup,      to: "users#new",                  as: :signup
+  get    :landing,             to: "landing#index",              as: :landing
+  get    :signin,              to: "sessions#new",               as: :signin
+  get    :signup,              to: "users#new",                  as: :signup
+  get    "/invite/:agent_id",  to: "users#new",                  as: :invite
 
   # maybe make into a named resource
   get    :request_password,        to: "password_resets#request_password", as: :request_password

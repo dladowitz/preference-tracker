@@ -58,9 +58,12 @@
 
         - if current_user.is_agent?
           %li{:class => is_active_controller('clients')}
-            = link_to user_clients_path(current_user) do
+            %a{:href => ""}
               %i.fa.fa-user
               %span.nav-label Clients
+              %span.fa.arrow
+            %ul{:class => "nav nav-second-level collapse #{is_active_controller('showing_trackings')}"}
+              %li{:class => is_active_action('index')}= link_to "All Clients", user_clients_path(current_user)
 
 
 

@@ -7,8 +7,12 @@
 
       .ibox-content
         .row
-          -# .ibox-tools
-          -# = link_to "Add A Client", new_user_client_path(@agent), class: "btn btn-primary pull-right"
+          %h4
+            Client Invite Link
+            %small Share with clients to view their showings
+          %h5
+            = link_to invite_url(@agent), invite_path(@agent)
+        .row
           %ul
             - @clients.each do |client|
               %li
