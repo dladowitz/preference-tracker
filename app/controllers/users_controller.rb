@@ -10,8 +10,6 @@ class UsersController < ApplicationController
     if params[:agent_id]
       @agent = User.find params[:agent_id]
       @user = @agent.clients.new
-    elsif @user #if rendering from a failed create
-      @agent = @user.agent
     else
       @user = User.new
       @agents = User.agents.order(:first_name)
@@ -31,6 +29,7 @@ class UsersController < ApplicationController
       session[:id] = @user.id
       redirect_to user_showing_trackings_path(@user)
     else
+      @@agent = User.find params[:agent_id]
       render :new #, layout: "guest_pages/guest_layout"
     end
   end
