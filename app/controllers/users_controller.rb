@@ -29,7 +29,7 @@ class UsersController < ApplicationController
       session[:id] = @user.id
       redirect_to user_showing_trackings_path(@user)
     else
-      @@agent = User.find params[:agent_id]
+      @agent = User.find user_params[:agent_id]
       render :new #, layout: "guest_pages/guest_layout"
     end
   end
