@@ -15,7 +15,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new user_params
-
     if @user.save
       flash[:success] = "You did it. You successfully signed up. Hi-five!"
 
@@ -55,6 +54,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :is_agent, :password, :password_confirmation, :admin)
+    params.require(:user).permit(:first_name, :last_name, :email, :is_agent, :agent_id, :password, :password_confirmation, :admin)
   end
 end
