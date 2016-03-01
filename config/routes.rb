@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root to: "landing#index"
+  # root to: "landing#index"
+  root to: "sessions#new"
 
   # custom routes
   get    :landing,             to: "landing#index",              as: :landing
