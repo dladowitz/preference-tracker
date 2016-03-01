@@ -22,16 +22,19 @@
           .form-group
             = f.label :email, class: "label-control"
             = f.text_field :email, class: "form-control"
-          .form-group
-            = f.hidden_field :agent_id, value: @agent.id
 
-          - unless @agent
+          -if @agent
+            .form-group
+              = f.hidden_field :agent_id, value: @agent.id
+
+          - else @agent
             .form-group
               = f.label :is_agent, "Are You An Agent or a Buyer?", class: "label-control"
               = f.select :is_agent, [["Buyer", 0],["Agent", 1]], class: "form-control"
             .form-group
               = f.label :agent_id, "Who is your Agent?", class: "label-control"
               = f.select(:agent_id, @agents.all.collect {|agent| [agent.full_name, agent.id]}, :prompt => "I don't have one")
+
           .form-group
             = f.label :password, class: "label-control"
             = f.password_field :password, class: "form-control"
