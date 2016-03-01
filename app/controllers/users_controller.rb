@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @agents = User.agents.order(:first_name)
 
     # render layout: "guest_pages/guest_layout"
   end

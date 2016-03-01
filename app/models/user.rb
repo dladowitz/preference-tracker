@@ -15,7 +15,7 @@
 #
 
 class User < ActiveRecord::Base
-  validates :first_name, presence: true
+  validates :first_name, :last_name, presence: true
   validates :email,      presence: true, uniqueness: true
   validates :password,   presence: { on: create }, length: { minimum: 6 }, if: :password_digest_changed?
 
@@ -51,6 +51,11 @@ class User < ActiveRecord::Base
 
 
   ### Class Methods
+
+  # TODO make this a scope
+  def self.agents
+    User.all.where(is_agent: true)
+  end
 
   # Not sure how Thread works here, but a guy on the interweb seems to thing its ok:
   # http://clearcove.ca/2008/08/recipe-make-request-environment-available-to-models-in-rails/

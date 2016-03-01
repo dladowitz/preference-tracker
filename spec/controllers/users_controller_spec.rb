@@ -3,7 +3,11 @@ require 'rails_helper'
 describe UsersController do
   describe "GET new" do
     subject { get :new }
-    before { subject }
+    before(:each) do
+      create :user, is_agent: true
+      create :user, is_agent: true
+      subject
+    end
 
     it "renders the new template" do
       expect(response).to render_template :new
@@ -12,12 +16,14 @@ describe UsersController do
     it "creates a new user object" do
       expect(assigns(:user)).to be_a_new User
     end
+
+    it "finds all the agents" do
+      expect(assigns(:agents)).to eq User.agents
+    end
   end
 
   describe "POST create" do
-
     context "with valid params" do
-
       it "creates a new user in the database" do
         expect{ post :create, user: {first_name: "Andre", email: "Andre.Ampere@gmail.com", password: "asdfasdf", password_confirmation: "asdfasdf" } }.to change{ User.count }.by 1
       end

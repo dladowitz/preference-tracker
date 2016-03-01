@@ -31,4 +31,15 @@ describe User do
     client = create :user, agent_id: agent.id
     expect(client.agent).to eq agent
   end
+
+  it "has User#agents defined" do
+    agent1 = create :user, is_agent: true
+    agent2 = create :user, is_agent: true
+    expect(User.agents).to eq [agent1, agent2]
+  end
+
+  it "has #full_name defined" do
+    user = create :user, first_name: "Tony", last_name: "Stark"
+    expect(user.full_name).to eq "Tony Stark"
+  end
 end
