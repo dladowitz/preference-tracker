@@ -16,4 +16,4 @@
           %ul
             - @clients.each do |client|
               %li
-                %h2= link_to client.first_name.capitalize, user_showing_trackings_path(client)
+                %h2= link_to client.full_name, user_showing_trackings_path(client)
